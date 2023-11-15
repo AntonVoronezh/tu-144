@@ -1,0 +1,14 @@
+сохранять скриншоты да\нет (True\False)#save_screenshot_enable_setting# True # <= менять только это значение
+рост подписчиков за месяц да\нет (True\False)#participants_month_plus_enable_setting# False # <= менять только это значение
+рост подписчиков за неделю да\нет (True\False)#participants_week_plus_enable_setting# True # <= менять только это значение
+упоминаний да\нет (True\False)#mentions_enable_setting# True # <= менять только это значение
+репостов да\нет (True\False)#reposts_enable_setting# True # <= менять только это значение
+цена пдп да\нет (True\False)#user_cost_enable_setting# True # <= менять только это значение
+учитывать среднее количество рекламы в день да\нет (True\False)#advertising_count_enable_setting# True # <= менять только это значение
+
+количество упоминаний#mentions_count_setting# 100 # <= менять только это значение
+количество репостов#reposts_count_setting# 1 # <= менять только это значение
+количество стоимость СPM категории#cpm_cost_setting#  700 # <= менять только это значение
+количество цена подписчика#user_cost_setting# 10 # <= менять только это значение
+количество среднее количество рекламы в день#advertising_count_setting# 2 # <= менять только это значение
+
