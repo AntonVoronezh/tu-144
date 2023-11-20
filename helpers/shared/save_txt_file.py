@@ -7,8 +7,12 @@ def save_arr_in_txt_file(arr, folder_path, file_name):
     file_path = os.path.join(folder_path, file_name)
 
     with open(f'{file_path}.txt', 'w', encoding='utf-8') as f:
-        for line in arr:
-            f.write(f"{line}\n")
+        for j, line in enumerate(arr):
+            cur_num = j + 1
+            if cur_num != len(arr):
+                f.write(f"{line}\n")
+            else:
+                f.write(f"{line}")
 
 
 # def save_arr_in_txt_file(arr, file_name):

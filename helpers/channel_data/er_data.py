@@ -12,10 +12,10 @@ def get_er_data(driver, arr):
 
     if len(desc) == 0:
         print(Fore.RED + f' нет ER' + Fore.RESET)
-        return False
+        return f' нет ER'
 
     text = desc.replace('%', '')
     text_float = float(text)
     set_in_arr_by_index(arr=arr, name='вовлеченность ER', value=text_float)
 
-    return True
+    return None

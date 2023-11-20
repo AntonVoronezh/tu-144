@@ -9,12 +9,12 @@ def get_contact_data(driver, arr):
     html = driver.page_source
 
     soup = BeautifulSoup(html, 'lxml')
-    desc = soup.find('div', class_='kt-widget__info').text.strip().replace('Показать еще...', '').replace(',', '')
+    desc = soup.find('div', class_='kt-widget__info').text.strip().replace('Показать еще...', ' ').replace('\n',' ').replace('\t',' ')
 
     if '@' not in desc:
         print(Fore.RED + f' нет контактных данных' + Fore.RESET)
-        return False
+        return 'нет контактных данных'
 
     set_in_arr_by_index(arr=arr, name='описание', value=desc)
-    return True
+    return None
 

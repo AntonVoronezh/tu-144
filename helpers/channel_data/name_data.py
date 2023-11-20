@@ -14,6 +14,6 @@ def get_name_data(driver, arr):
 
     if len(name) == 0:
         print(Fore.RED + f' нет имени канала' + Fore.RESET)
-        return False
+        return f'нет имени канала'
 
-    return name
+    return None

@@ -17,13 +17,13 @@ def user_cost_data(driver, arr):
 
     if str(p_pdp) == 0:
         print(Fore.RED + f' нет стоим подписч' + Fore.RESET)
-        return False
+        return f' нет стоим подписч'
 
     if user_cost_enable_setting:
         if p_pdp < user_cost_setting:
             print(Fore.RED + f' маленькая стоим подписч {p_pdp}' + Fore.RESET)
-            return False
+            return f'маленькая стоим подписч {p_pdp}'
 
     set_in_arr_by_index(arr=arr, name='стоим подписч', value=p_pdp)
 
-    return True
+    return None

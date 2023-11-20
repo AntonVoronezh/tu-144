@@ -15,6 +15,6 @@ def get_view_per_post(driver, arr):
 
     if total_int == 0:
         print(Fore.RED + f' нет просм на пост' + Fore.RESET)
-        return False
+        return f'нет просм на пост'
 
-    return True
+    return None

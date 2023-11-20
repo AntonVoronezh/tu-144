@@ -1,2 +1,2 @@
 current_result_for = 'my'
-# current_result_for = 'TanjaTat'
+# current_result_for = 'OksanaVtorova'

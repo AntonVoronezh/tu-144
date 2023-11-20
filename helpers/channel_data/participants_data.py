@@ -15,7 +15,7 @@ def get_total_participants_data(driver, arr):
 
     if total_int == 0:
         print(Fore.RED + f' нет подписчиков' + Fore.RESET)
-        return False
+        return 'нет подписчиков'
 
     set_in_arr_by_index(arr=arr, name='подписчиков', value=total_int)
 
@@ -25,13 +25,13 @@ def get_total_participants_data(driver, arr):
 
         if '-' in span_arr[1].text:
             print(Fore.RED + f' минус подписчиков за месяц {span_arr[1].text}' + Fore.RESET)
-            return False
+            return  f' минус подписчиков за месяц {span_arr[1].text}'
 
     if participants_week_plus_enable_setting:
         total_week = soup.find('span', {'data-num': 'participants_week'}).text.strip().replace("'", '')
 
         if '-' in total_week:
             print(Fore.RED + f' минус подписчиков за неделю {total_week}' + Fore.RESET)
-            return False
+            return f'минус подписчиков за неделю {total_week}'
 
-    return True
+    return None

@@ -1,8 +1,0 @@
-#save_screenshot_enable_setting#True#
-#views_post_from#1000#
-#views_post_to#2000#
-#mentions_week_from#20#
-#er_from#15#
-#er_to#30#
-#title#Родолг,целитель#
-#about#Нетрадиционная психология, работа с подсознанием #

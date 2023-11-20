@@ -17,10 +17,10 @@ def get_advertising_cost(driver, arr):
 
     if str(total_int) == 0:
         print(Fore.RED + f' нет стоимость рекламы' + Fore.RESET)
-        return False
+        return f' нет стоимость рекламы'
 
     cost = math.floor((total_int * cpm_cost_setting) / 1000)
 
     set_in_arr_by_index(arr=arr, name='стоимость рекламы', value=cost)
 
-    return True
+    return None

@@ -5,15 +5,13 @@ from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.chrome.options import Options
 
-from get_path import result_path
-from helpers.by_filter.get_links_from_file import get_links_from_result_file, get_arr_from_settings_file, \
-    get_arr_from_tmp_file, get_arr_from_tmp_file_for_lsx
+from helpers.by_filter.get_links_from_file import get_links_from_result_file
 from helpers.channel_data.get_data_by_chanel_name import get_data_by_chanel_name
+from helpers.channel_data.get_settings_from_file import save_zip_enable_setting
 from helpers.shared.ckeck_stages import check_stages
 from helpers.shared.make_zip import make_zip
 from helpers.shared.save_xlsx import save_xlsx
 from helpers.shared.time_lambda import time_lambda
-from settings.main import current_result_for
 
 chrome_options = Options()
 chrome_options.add_experimental_option("debuggerAddress", "127.0.0.1:9222")
@@ -34,8 +32,8 @@ def get_channels_data_one_by_one():
             get_data_by_chanel_name(driver=driver, channel_name=el)
             print(f'{i + 1} из {len(channel_names)}, {channel_names[i]}', flush=True)
 
-    columns = get_arr_from_settings_file(file_name='columns')
-    arr_out = get_arr_from_tmp_file_for_lsx(file_name='total_info_arr_for_i')
-    save_xlsx(arr=arr_out, columns=columns, file_name='result', sheet_name='Прошли проверку')
+    save_xlsx()
     time_lambda(start_time=start_time)
-    make_zip()
+
+    if save_zip_enable_setting:
+        make_zip()

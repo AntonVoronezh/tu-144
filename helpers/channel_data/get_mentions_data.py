@@ -17,13 +17,13 @@ def get_mentions_data(driver, arr):
 
     if len(desc) == 0:
         print(Fore.RED + f' нет упоминаний' + Fore.RESET)
-        return False
+        return f' нет упоминаний'
 
     if mentions_enable_setting:
         if text_int < mentions_count_setting:
             print(Fore.RED + f' мало упоминаний {text_int}' + Fore.RESET)
-            return False
+            return f' мало упоминаний {text_int}'
 
     set_in_arr_by_index(arr=arr, name='упоминания', value=text_int)
 
-    return True
+    return None

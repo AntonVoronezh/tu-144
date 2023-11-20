@@ -1,5 +1,6 @@
-сохранять скриншоты да\нет (True\False)#save_screenshot_enable_setting# True # <= менять только это значение
-рост подписчиков за месяц да\нет (True\False)#participants_month_plus_enable_setting# False # <= менять только это значение
+сохранять скриншоты да\нет (True\False)#save_screenshot_enable_setting# False # <= менять только это значение
+сохранять архив да\нет (True\False)#save_zip_enable_setting# False # <= менять только это значение
+рост подписчиков за месяц да\нет (True\False)#participants_month_plus_enable_setting# True # <= менять только это значение
 рост подписчиков за неделю да\нет (True\False)#participants_week_plus_enable_setting# True # <= менять только это значение
 упоминаний да\нет (True\False)#mentions_enable_setting# True # <= менять только это значение
 репостов да\нет (True\False)#reposts_enable_setting# True # <= менять только это значение
