@@ -4,6 +4,7 @@ import pandas as pd
 
 from get_path import result_path, result_xlsx_path
 from helpers.by_filter.get_links_from_file import get_arr_from_settings_file
+from helpers.shared.get_today import get_today
 
 
 def save_xlsx():
@@ -11,7 +12,10 @@ def save_xlsx():
     sheet_name_good = 'Прошли проверку'
     sheet_name_bad = 'НЕ прошли проверку'
     files = os.listdir(result_xlsx_path)
-    out_path = os.path.join(result_path, 'results.xlsx')
+
+    current_date = get_today()
+
+    out_path = os.path.join(result_path, f'results_{current_date}.xlsx')
 
     good_arr = []
     bad_arr = []
@@ -36,4 +40,4 @@ def save_xlsx():
         df_bad.to_excel(excel_writer=writer, sheet_name=sheet_name_bad)
 
 
-save_xlsx()
+# save_xlsx()
