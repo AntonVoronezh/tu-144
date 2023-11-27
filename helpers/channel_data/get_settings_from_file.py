@@ -7,7 +7,6 @@ from helpers.shared.get_value_from_setting import get_value_from_setting
 file_path = os.path.join(setting_path, 'channel_data_setting.txt')
 
 save_screenshot_enable_setting = get_boolean_value_from_setting(file_path=file_path, setting_name='save_screenshot_enable_setting')
-save_zip_enable_setting = get_boolean_value_from_setting(file_path=file_path, setting_name='save_zip_enable_setting')
 participants_month_plus_enable_setting = get_boolean_value_from_setting(file_path=file_path, setting_name='participants_month_plus_enable_setting')
 participants_week_plus_enable_setting = get_boolean_value_from_setting(file_path=file_path, setting_name='participants_week_plus_enable_setting')
 mentions_enable_setting = get_boolean_value_from_setting(file_path=file_path, setting_name='mentions_enable_setting')

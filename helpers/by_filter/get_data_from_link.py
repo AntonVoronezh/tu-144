@@ -5,7 +5,6 @@ from get_path import result_tmp_path
 from helpers.by_filter.get_links_from_file import get_arr_from_tmp_file
 from helpers.by_filter.make_name_from_link import make_name_from_link
 from helpers.shared.rand_sleep import rand_sleep
-from helpers.shared.save_screenshot import save_by_filters_screenshots
 from helpers.shared.save_txt_file import save_in_uniq_txt_file, add_more_line_in_txt_file
 
 
@@ -20,8 +19,6 @@ def get_data_from_link(input_link, driver):
 
     print(Fore.BLUE + f'{name_for_save}' + Fore.RESET)
     driver.get(input_link)
-
-    save_by_filters_screenshots(driver=driver, name=name_for_save, is_none=False)
 
     html_link = driver.page_source
     soup_link = BeautifulSoup(html_link, 'lxml')

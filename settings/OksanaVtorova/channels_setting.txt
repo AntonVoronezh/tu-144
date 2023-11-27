@@ -1,9 +1,0 @@
-#save_screenshot_enable_setting#False#
-сохранять архив да\нет (True\False)#save_zip_enable_setting# False # <= менять только это значение
-#views_post_from#10#
-#views_post_to#10000#
-#mentions_week_from#1#
-#er_from#1#
-#er_to#100#
-#title#Авито, Avito, объявления, услуги#
-#about#Астрахань, Волгоград, Камызяк, Началово, Астраханская область#

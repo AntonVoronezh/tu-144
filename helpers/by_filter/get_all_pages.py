@@ -1,11 +1,9 @@
 import os
 
 from bs4 import BeautifulSoup
-from colorama import Fore
 
 from get_path import result_tmp_path
 from helpers.by_filter.make_name_from_link import make_name_from_link
-from helpers.shared.save_screenshot import save_by_filters_screenshots
 from helpers.shared.save_txt_file import add_more_line_in_txt_file
 
 
@@ -18,7 +16,6 @@ def get_all_pages(input_link, driver):
 
     if pag_ul is None:
         name_for_save = make_name_from_link(link=input_link)
-        save_by_filters_screenshots(driver=driver, name=name_for_save, is_none=True)
         return
 
     pag_li_arr = pag_ul.find_all('li')

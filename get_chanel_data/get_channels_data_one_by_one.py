@@ -7,9 +7,7 @@ from selenium.webdriver.chrome.options import Options
 
 from helpers.by_filter.get_links_from_file import get_links_from_result_file
 from helpers.channel_data.get_data_by_chanel_name import get_data_by_chanel_name
-from helpers.channel_data.get_settings_from_file import save_zip_enable_setting
 from helpers.shared.ckeck_stages import check_stages
-from helpers.shared.make_zip import make_zip
 from helpers.shared.save_xlsx import save_xlsx
 from helpers.shared.time_lambda import time_lambda
 
@@ -35,5 +33,3 @@ def get_channels_data_one_by_one():
     save_xlsx()
     time_lambda(start_time=start_time)
 
-    if save_zip_enable_setting:
-        make_zip()

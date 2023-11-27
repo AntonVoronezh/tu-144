@@ -14,15 +14,6 @@ def get_reposts_data(driver, arr):
 
     text_int = int(desc)
 
-    if len(desc) == 0:
-        print(Fore.RED + f' нет репостов' + Fore.RESET)
-        return f' нет репостов'
-
-    if reposts_enable_setting:
-        if text_int < reposts_count_setting:
-            print(Fore.RED + f' мало репостов {text_int}' + Fore.RESET)
-            return f'мало репостов {text_int}'
-
     set_in_arr_by_index(arr=arr, name='репосты', value=text_int)
 
     return None
