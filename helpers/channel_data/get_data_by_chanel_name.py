@@ -4,6 +4,7 @@ from helpers.channel_data.contact_data import get_contact_data
 from helpers.channel_data.er_data import get_er_data
 from helpers.channel_data.get_advertising_cost import get_advertising_cost
 from helpers.channel_data.get_mentions_data import get_mentions_data
+from helpers.channel_data.get_pol import get_pol
 from helpers.channel_data.get_reposts_data import get_reposts_data
 from helpers.channel_data.get_view_per_post import get_view_per_post
 from helpers.channel_data.name_data import get_name_data
@@ -64,6 +65,8 @@ def get_data_by_chanel_name(driver, channel_name):
     # стоимость рекламы
     get_advertising_cost(driver=driver, arr=total_info_arr_for_i)
 
+    # пол
+    get_pol(driver=driver, arr=total_info_arr_for_i)
 
 
     name_for_save = channel_name.replace('/', '--')
