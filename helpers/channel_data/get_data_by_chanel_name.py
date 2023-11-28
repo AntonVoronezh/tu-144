@@ -3,6 +3,7 @@ from helpers.by_filter.get_links_from_file import get_arr_from_settings_file
 from helpers.channel_data.contact_data import get_contact_data
 from helpers.channel_data.er_data import get_er_data
 from helpers.channel_data.get_advertising_cost import get_advertising_cost
+from helpers.channel_data.get_history_name import get_history_name
 from helpers.channel_data.get_mentions_data import get_mentions_data
 from helpers.channel_data.get_reposts_data import get_reposts_data
 from helpers.channel_data.get_view_per_post import get_view_per_post
@@ -13,6 +14,7 @@ from helpers.contact_data_extract import get_contact_data_extract
 from helpers.shared.save_screenshot import save_channel_data_screenshots
 from helpers.shared.save_txt_file import add_more_line_in_txt_file, save_arr_in_txt_file
 from helpers.shared.set_in_arr_by_index import set_in_arr_by_index
+from helpers.channel_data.get_pol import get_pol
 
 
 def get_data_by_chanel_name(driver, channel_name):
@@ -79,6 +81,12 @@ def get_data_by_chanel_name(driver, channel_name):
     advertising_cost = get_advertising_cost(driver=driver, arr=total_info_arr_for_i)
     if advertising_cost is not None:
         is_none_arr.append(advertising_cost)
+
+    # история имен
+    # get_history_name(driver=driver, arr=total_info_arr_for_i)
+
+    # пол
+    get_pol(driver=driver, arr=total_info_arr_for_i)
 
 
     name_for_save = channel_name.replace('/', '--')
