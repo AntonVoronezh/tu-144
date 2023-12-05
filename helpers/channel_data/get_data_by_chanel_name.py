@@ -3,6 +3,7 @@ from helpers.by_filter.get_links_from_file import get_arr_from_settings_file
 from helpers.channel_data.contact_data import get_contact_data
 from helpers.channel_data.er_data import get_er_data
 from helpers.channel_data.get_advertising_cost import get_advertising_cost
+from helpers.channel_data.get_forwarding import get_forwarding
 from helpers.channel_data.get_mentions_data import get_mentions_data
 from helpers.channel_data.get_pol import get_pol
 from helpers.channel_data.get_reposts_data import get_reposts_data
@@ -67,6 +68,9 @@ def get_data_by_chanel_name(driver, channel_name):
 
     # пол
     get_pol(driver=driver, arr=total_info_arr_for_i)
+
+    # пересылок
+    get_forwarding(driver=driver, arr=total_info_arr_for_i)
 
 
     name_for_save = channel_name.replace('/', '--')
