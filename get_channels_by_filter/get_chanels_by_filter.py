@@ -19,13 +19,20 @@ from helpers.shared.time_lambda import time_lambda
 # username = "telemetr.obucheniye@mail.ru"
 # password = "obuchTG123"
 
-chrome_options = Options()
-chrome_options.add_experimental_option("debuggerAddress", "127.0.0.1:9222")
-service = Service(executable_path="C:\webdrivers\chromedriver.exe")
-driver = webdriver.Chrome(service=service, options=chrome_options)
+# chrome_options = Options()
+# chrome_options.add_experimental_option("debuggerAddress", "127.0.0.1:9222")
+# service = Service(executable_path="C:\webdrivers\chromedriver.exe")
+# driver = webdriver.Chrome(service=service, options=chrome_options)
+
+# service = Service(executable_path="C:\webdrivers\geckodriver.exe", service_args=['--marionette-port', '2828', '--connect-existing'])
+# options = webdriver.FirefoxOptions()
+# driver = webdriver.Firefox(service=service, options=options)
+
+# pageSource = driver.page_source
+# print(pageSource)
 
 
-def get_channels_by_filter():
+def get_channels_by_filter(driver):
     start_time = datetime.now()
 
     make_links()

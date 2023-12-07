@@ -72,6 +72,5 @@ def get_data_by_chanel_name(driver, channel_name):
     # пересылок
     get_forwarding(driver=driver, arr=total_info_arr_for_i)
 
-
     name_for_save = channel_name.replace('/', '--')
     save_arr_in_txt_file(arr=total_info_arr_for_i, folder_path=result_xlsx_path, file_name=f'{name_for_save}')

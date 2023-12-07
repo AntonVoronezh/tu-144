@@ -10,7 +10,6 @@ def get_forwarding(driver, arr):
     try:
         forwarding_count_ex = soup.find('a', {'data-sort': 'forwards'})
         forwarding_count = forwarding_count_ex.text.replace('\n','').strip().split(' ')[0]
-        print('forwarding_count', forwarding_count)
         set_in_arr_by_index(arr=arr, name='пересылок', value=forwarding_count)
     except:
         set_in_arr_by_index(arr=arr, name='пересылок', value=0)
