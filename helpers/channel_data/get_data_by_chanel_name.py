@@ -3,6 +3,7 @@ from helpers.by_filter.get_links_from_file import get_arr_from_settings_file
 from helpers.channel_data.contact_data import get_contact_data
 from helpers.channel_data.er_data import get_er_data
 from helpers.channel_data.get_advertising_cost import get_advertising_cost
+from helpers.channel_data.get_all_contacts import get_all_contacts
 from helpers.channel_data.get_forwarding import get_forwarding
 from helpers.channel_data.get_mentions_data import get_mentions_data
 from helpers.channel_data.get_pol import get_pol
@@ -44,6 +45,9 @@ def get_data_by_chanel_name(driver, channel_name):
 
     # ссылка на канал
     set_in_arr_by_index(arr=total_info_arr_for_i, name='ссылка', value=f'http://t.me/{tg_link}')
+
+    # все контакты
+    get_all_contacts(driver=driver, arr=total_info_arr_for_i)
 
     # подписчики
     get_total_participants_data(driver=driver, arr=total_info_arr_for_i)
