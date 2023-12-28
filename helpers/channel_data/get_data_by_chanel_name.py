@@ -1,5 +1,6 @@
 from get_path import result_tmp_path, result_xlsx_path
 from helpers.by_filter.get_links_from_file import get_arr_from_settings_file
+from helpers.channel_data.check_red_line import check_red_line
 from helpers.channel_data.contact_data import get_contact_data
 from helpers.channel_data.er_data import get_er_data
 from helpers.channel_data.get_advertising_cost import get_advertising_cost
@@ -7,6 +8,7 @@ from helpers.channel_data.get_all_contacts import get_all_contacts
 from helpers.channel_data.get_forwarding import get_forwarding
 from helpers.channel_data.get_mentions_data import get_mentions_data
 from helpers.channel_data.get_pol import get_pol
+from helpers.channel_data.get_premium import get_premium
 from helpers.channel_data.get_reposts_data import get_reposts_data
 from helpers.channel_data.get_view_per_post import get_view_per_post
 from helpers.channel_data.name_data import get_name_data
@@ -29,6 +31,11 @@ def get_data_by_chanel_name(driver, channel_name):
 
     add_more_line_in_txt_file(line=tg_link, folder_path=result_tmp_path,
                               file_name='by_channel_name_ready')
+
+    # проверка на метку бота
+    red_line = check_red_line(driver=driver)
+    if red_line is not None:
+        return
 
     # название канала
     name = get_name_data(driver=driver, arr=total_info_arr_for_i)
@@ -75,6 +82,9 @@ def get_data_by_chanel_name(driver, channel_name):
 
     # пересылок
     get_forwarding(driver=driver, arr=total_info_arr_for_i)
+
+    # премиум
+    get_premium(driver=driver, arr=total_info_arr_for_i)
 
     name_for_save = channel_name.replace('/', '--')
     save_arr_in_txt_file(arr=total_info_arr_for_i, folder_path=result_xlsx_path, file_name=f'{name_for_save}')
